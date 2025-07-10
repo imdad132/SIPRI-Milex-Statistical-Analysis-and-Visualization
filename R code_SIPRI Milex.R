@@ -1,4 +1,4 @@
-# Step 1: Install the readxl package (only once)
+# Install the readxl package 
 install.packages("readxl")
 
 library(readxl)      # For reading Excel files
@@ -6,7 +6,6 @@ library(dplyr)       # For data manipulation
 library(ggplot2)     # For plotting
 library(tidyr)       # For reshaping data
 library(stringr)     # For string operations
-
 
 
 df <- read_excel("C:/Users/imdad/OneDrive/Desktop/SIPRI-Milex-data-1974-2024.xlsx", sheet = "Regional totals")
@@ -105,8 +104,6 @@ str(gov_df)
 gdp_df <- gdp_df %>%
   mutate(Share_GDP = as.numeric(Share_GDP))
 
-
-
 # Convert Share_Gov to numeric (in-place)
 gov_df <- gov_df %>%
   mutate(Share_Gov = as.numeric(Share_Gov))
@@ -127,10 +124,7 @@ avg_df <- merged_df %>%
 head(avg_df)
 
 
-
-
-
-# Step 7: Reshape and Plot Correlation Graph (Final Fix)
+# Reshape and Plot Correlation Graph (Final Fix)
 
 # Rename columns to match legend labels before plotting
 avg_long <- avg_df %>%
