@@ -123,6 +123,12 @@ avg_df <- merged_df %>%
 # Check output
 head(avg_df)
 
+# Define Western European countries
+western_europe <- c(
+  "Austria", "Belgium", "Cyprus", "Denmark", "Finland", "France", "Germany", "Greece",
+  "Ireland", "Italy", "Luxembourg", "Malta", "Netherlands", "Norway", "Portugal", "Spain",
+  "Sweden", "Switzerland", "United Kingdom"
+)
 
 # Filter and select relevant years
 gdp_filtered <- gdp_data %>%
