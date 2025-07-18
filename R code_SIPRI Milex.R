@@ -124,6 +124,29 @@ avg_df <- merged_df %>%
 head(avg_df)
 
 
+# Filter and select relevant years
+gdp_filtered <- gdp_data %>%
+  filter(Country %in% western_europe) %>%
+  select(Country, `1988`:`2024`)
+
+# Calculate standard deviation in case of Share of GDP_1988-2024
+gdp_std <- gdp_filtered %>%
+  rowwise() %>%
+  mutate(Std_Dev_Share_GDP = sd(c_across(`1988`:`2024`), na.rm = TRUE)) %>%
+  ungroup()
+
+# Plot SD in a bar chart
+ggplot(gdp_std, aes(x = reorder(Country, -Std_Dev_Share_GDP), y = Std_Dev_Share_GDP)) +
+  geom_bar(stat = "identity", fill = "darkgreen") +
+  labs(
+    title = "Standard Deviation of Military Expenditure as Share of GDP (1988–2024)",
+    x = "Country",
+    y = "Standard Deviation"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
 # Reshape and Plot Correlation Graph (Final Fix)
 
 # Rename columns to match legend labels before plotting
