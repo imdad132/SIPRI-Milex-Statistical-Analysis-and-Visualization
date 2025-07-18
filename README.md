@@ -37,6 +37,13 @@ The script reads two more sheets from the Excel file: one showing military spend
 # 6. Merge and Compute Averages
 It merges the two datasets (GDP share and government spending share) by country and year. Then, it calculates the average values for each year across all Western European countries.
 
+
+# What does standard deviation mean here
+A higher standard deviation = more variation/volatility in military spending over the years.
+
+A lower standard deviation = more stability/consistency in military spending relative to GDP.
+
+
 # 7. Visualize Correlation
 Finally, the script reshapes the average data again to prepare it for plotting. It creates a line plot showing the trends of average military spending as a share of GDP and as a share of government spending over time, allowing for visual comparison.
 
