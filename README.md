@@ -1,5 +1,5 @@
 
-                                                                                     **  # Step-by-Step Explanation of Code**
+# Step-by-Step Explanation of Code
 
 ## 1. Load Libraries
 This section loads the necessary R packages:
